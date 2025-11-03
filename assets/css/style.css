@@ -65,4 +65,8 @@ body {
 @media (max-width:720px) {
   .hero { flex-direction:column; }
   .hero-img { width:100%; }
+  .main {
+    padding: 0 15px;  /* 画面が狭いときは少し余白を減らす */
+  }
+
 }
