@@ -33,7 +33,12 @@ body {
 .nav-item:hover { color: #7b2d26; }
 
 /* main */
-.main { padding: 24px 0; }
+.main {
+  max-width: 900px;       /* 読みやすい幅に制限（お好みで） */
+  margin: 40px auto;      /* 上下40px、左右自動で中央寄せ */
+  padding: 0 20px;        /* 左右に20pxの内側余白 */
+  line-height: 1.8;       /* 行間を少し広げて読みやすく */
+}
 
 /* hero */
 .hero { display:flex; gap:20px; align-items:center; margin-bottom:20px; flex-wrap:wrap; }
