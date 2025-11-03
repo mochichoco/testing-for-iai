@@ -70,3 +70,17 @@ body {
   }
 
 }
+
+/* --- aboutページなど全ページで余白が見えるように --- */
+.main {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 24px; /* ← ここで左右の余白を強めに指定 */
+}
+
+@media (max-width:720px) {
+  .main {
+    padding: 0 24px; /* ← スマホ時も十分な余白に */
+  }
+}
