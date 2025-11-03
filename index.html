@@ -2,10 +2,106 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>バスケ部公式サイト（仮）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>〇〇大学居合道部</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      background-color: #fdfaf5; /* 和紙っぽい色 */
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+
+    header {
+      background-color: #2c3e50; /* 紺 */
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+    nav {
+      background-color: #f4f0eb;
+      text-align: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #2c3e50;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #7b2d26; /* 暗めの赤 */
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #7b2d26;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .intro img {
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+      padding: 1rem 0;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>バスケ部のWebサイトへようこそ</h1>
-  <p>これはGitHub Pagesのテストページです。</p>
+  <header>
+    <h1>〇〇大学 居合道部</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="about.html">活動紹介</a>
+    <a href="members.html">部員紹介</a>
+    <a href="news.html">お知らせ</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <img src="img/iaido_sample.jpg" alt="居合道の稽古風景">
+      <p>
+        私たちは伝統ある武道・居合道を通じて、礼節と心の鍛錬を重んじています。<br>
+        経験者も初心者も歓迎。共に静かな気迫を磨きましょう。
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 〇〇大学 居合道部
+  </footer>
 </body>
 </html>
