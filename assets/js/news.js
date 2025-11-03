@@ -7,7 +7,7 @@
     const list = document.getElementById('news-list');
     if(!list) return;
     // 最新3件（配列は新しい順を想定）
-    const items = data.slice(0,3);
+    const items = data.slice(0,30);
     list.innerHTML = items.map(item => {
       const safeTitle = String(item.title).replace(/</g,'&lt;');
       const link = item.link ? item.link : '#';
