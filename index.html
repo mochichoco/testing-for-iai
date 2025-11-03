@@ -1,107 +1,70 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>〇〇大学居合道部</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-      background-color: #fdfaf5; /* 和紙っぽい色 */
-      color: #1a1a1a;
-      line-height: 1.8;
-    }
-
-    header {
-      background-color: #00053a; /* 紺 */
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
-      letter-spacing: 0.05em;
-    }
-
-    nav {
-      background-color: #f4f0eb;
-      text-align: center;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav a {
-      color: #2c3e50;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: #7b2d26; /* 暗めの赤 */
-    }
-
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 1.8rem;
-      border-bottom: 2px solid #7b2d26;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    .intro {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .intro img {
-      width: 80%;
-      max-width: 500px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 1px solid #ddd;
-      margin-top: 2rem;
-      padding: 1rem 0;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>〇〇大学 居合道部</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-  <header>
-    <h1>〇〇大学 居合道部</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">〇〇大学 居合道部</h1>
+      <p class="site-sub">静寂の中に、刃の声を聴く。</p>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">ホーム</a>
-    <a href="about.html">活動紹介</a>
-    <a href="members.html">部員紹介</a>
-    <a href="news.html">お知らせ</a>
-    <a href="contact.html">お問い合わせ</a>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-item">トップ</a>
+      <a href="about.html" class="nav-item">居合道とは</a>
+      <a href="overview.html" class="nav-item">部概要</a>
+      <a href="results.html" class="nav-item">大会結果</a>
+      <a href="schedule.html" class="nav-item">月間予定</a>
+    </div>
   </nav>
 
-  <main>
-    <section class="intro">
-      <img src="img/iaido_sample.jpg" alt="居合道の稽古風景">
-      <p>
-        私たちは伝統ある武道・居合道を通じて、礼節と心の鍛錬を重んじています。<br>
-        経験者も初心者も歓迎。共に静かな気迫を磨きましょう。
-      </p>
+  <main class="container main">
+    <section class="hero">
+      <img src="assets/img/iaido_sample.jpg" alt="居合道稽古風景" class="hero-img">
+      <div class="hero-text">
+        <h2>ようこそ</h2>
+        <p>私たちは伝統ある居合道を学び、礼と技を磨いています。経験者・初心者どちらも歓迎。</p>
+      </div>
+    </section>
+
+    <!-- お知らせ -->
+    <aside id="news" class="news">
+      <h3>お知らせ</h3>
+      <ul id="news-list" class="news-list">
+        <!-- news.js がここに最新3件を差し込みます -->
+      </ul>
+      <p class="news-link"><a href="results.html">過去のお知らせ・大会結果を見る</a></p>
+    </aside>
+
+    <!-- 簡易紹介 -->
+    <section class="intro-cards">
+      <article class="card">
+        <h4>稽古場所</h4>
+        <p>体育館B（毎週火・木 18:30〜）</p>
+      </article>
+      <article class="card">
+        <h4>見学・体験</h4>
+        <p>随時受け付けています。まずは月間予定をご確認ください。</p>
+      </article>
+      <article class="card">
+        <h4>連絡先</h4>
+        <p>公式X / Instagram にDMください</p>
+      </article>
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 〇〇大学 居合道部
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2025 〇〇大学 居合道部</small>
+    </div>
   </footer>
+
+  <script src="assets/js/news.js"></script>
 </body>
 </html>
