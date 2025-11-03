@@ -52,3 +52,12 @@ body {
   .hero { flex-direction:column; }
   .hero-img { width:100%; }
 }
+
+.site-title a {
+  color: inherit;         /* タイトルの文字色をそのまま使う */
+  text-decoration: none;  /* 下線を消す */
+}
+
+.site-title a:hover {
+  text-decoration: underline; /* ホバーで下線を表示（お好みで） */
+}
