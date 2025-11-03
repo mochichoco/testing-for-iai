@@ -1,74 +1,84 @@
-/* 全体 */
+/* 和風×シンプルベースデザイン */
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
+  background-color: #f8f7f3;
   color: #00053a;
+  line-height: 1.7;
 }
 
 /* ヘッダー */
 header {
   background-color: #00053a;
   color: white;
-  padding: 10px 20px;
+  text-align: center;
+  padding: 25px 10px 15px;
+  position: relative;
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
 }
 
-h1 {
-  font-size: 1.4rem;
-  margin: 0;
-}
-
-/* ナビメニュー */
-.nav-menu {
+/* ナビゲーション */
+nav ul {
   list-style: none;
-  display: flex;
-  gap: 15px;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-.nav-menu a {
+nav li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
 }
 
-.nav-menu a:hover {
-  text-decoration: underline;
+nav a:hover {
+  border-bottom: 1px solid white;
 }
 
 /* SNSアイコン */
-.social-icons a {
-  color: white;
-  margin-left: 10px;
-  font-size: 1.4rem;
+.social {
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
-.social-icons a:hover {
-  color: #c0392b; /* 暗めの赤アクセント */
+.social a {
+  color: white;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.social a:hover {
+  color: #b84040; /* 落ち着いた赤 */
 }
 
 /* お知らせ */
 #news {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 50px auto;
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 #news h2 {
-  border-bottom: 2px solid #00053a;
-  padding-bottom: 5px;
+  border-left: 5px solid #00053a;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 
 #news ul {
@@ -88,20 +98,20 @@ h1 {
 /* フッター */
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   background-color: #00053a;
   color: white;
-  margin-top: 40px;
+  font-size: 0.85rem;
 }
 
 /* スマホ対応 */
 @media (max-width: 700px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
+  nav li {
+    display: block;
+    margin: 6px 0;
   }
-  .nav-menu {
-    flex-direction: column;
-    gap: 5px;
+  .social {
+    position: static;
+    margin-top: 10px;
   }
 }
