@@ -1,43 +1,70 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>居合道部公式サイト</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>〇〇大学 居合道部</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>〇〇大学 居合道部</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">トップ</a></li>
-        <li><a href="about.html">居合道とは</a></li>
-        <li><a href="overview.html">部概要</a></li>
-        <li><a href="results.html">大会結果</a></li>
-        <li><a href="schedule.html">月間予定</a></li>
-      </ul>
-    </nav>
-    <div class="social">
-      <a href="https://x.com/example" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://instagram.com/example" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">〇〇大学 居合道部</h1>
+      <p class="site-sub">静寂の中に、刃の声を聴く。</p>
     </div>
   </header>
 
-  <main>
-    <section id="news">
-      <h2>お知らせ</h2>
-      <ul>
-        <li><span class="date">2025/11/03</span>　公式サイトを公開しました。</li>
-        <li><span class="date">2025/10/20</span>　秋季大会の結果を掲載しました。</li>
-        <li><span class="date">2025/09/15</span>　体験会を開催しました。</li>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-item">トップ</a>
+      <a href="about.html" class="nav-item">居合道とは</a>
+      <a href="overview.html" class="nav-item">部概要</a>
+      <a href="results.html" class="nav-item">大会結果</a>
+      <a href="schedule.html" class="nav-item">月間予定</a>
+    </div>
+  </nav>
+
+  <main class="container main">
+    <section class="hero">
+      <img src="assets/img/iaido_sample.jpg" alt="居合道稽古風景" class="hero-img">
+      <div class="hero-text">
+        <h2>ようこそ</h2>
+        <p>私たちは伝統ある居合道を学び、礼と技を磨いています。経験者・初心者どちらも歓迎。</p>
+      </div>
+    </section>
+
+    <!-- お知らせ -->
+    <aside id="news" class="news">
+      <h3>お知らせ</h3>
+      <ul id="news-list" class="news-list">
+        <!-- news.js がここに最新3件を差し込みます -->
       </ul>
+      <p class="news-link"><a href="results.html">過去のお知らせ・大会結果を見る</a></p>
+    </aside>
+
+    <!-- 簡易紹介 -->
+    <section class="intro-cards">
+      <article class="card">
+        <h4>稽古場所</h4>
+        <p>体育館B（毎週火・木 18:30〜）</p>
+      </article>
+      <article class="card">
+        <h4>見学・体験</h4>
+        <p>随時受け付けています。まずは月間予定をご確認ください。</p>
+      </article>
+      <article class="card">
+        <h4>連絡先</h4>
+        <p>公式X / Instagram にDMください</p>
+      </article>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 〇〇大学 居合道部</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2025 〇〇大学 居合道部</small>
+    </div>
   </footer>
+
+  <script src="assets/js/news.js"></script>
 </body>
 </html>
