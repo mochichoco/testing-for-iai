@@ -85,23 +85,3 @@ body {
   }
 }
 
-/* --- お知らせ欄の拡張 --- */
-.news {
-  background: #fff;
-  border: 2px solid #00053a;  /* 枠を濃くして目立たせる */
-  padding: 20px 18px;         /* 内側の余白を増やす */
-  border-radius: 8px;         /* 角を少し丸く */
-  margin-bottom: 30px;        /* 下の余白を広げてゆったり */
-}
-
-.news h3 {
-  font-size: 1.2rem;          /* 見出しを大きく */
-  margin-bottom: 14px;
-  border-left: 4px solid #7b2d26; /* 見出しにアクセントライン */
-  padding-left: 10px;
-}
-
-.news-list li {
-  padding: 10px 4px;          /* 各項目の高さを少し増やす */
-  font-size: 1rem;
-}
