@@ -85,3 +85,59 @@ body {
   }
 }
 
+/* --- ヘッダー横並び --- */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- ハンバーガーメニュー --- */
+.menu-toggle {
+  display: none; /* デフォルト非表示 */
+  flex-direction: column;
+  justify-content: center;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle span {
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ハンバーガー開いたときに×印 */
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
+
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+  /* トップページはハンバーガー非表示 */
+  body.top-page .menu-toggle { display: none; }
+
+  /* サブページは表示 */
+  body.sub-page .menu-toggle { display: flex; }
+
+  /* ナビ初期非表示 */
+  .site-nav { display: none; background: #f9f9f9; border-top: 1px solid #ccc; }
+
+  /* 開いたとき表示 */
+  body.sub-page .site-nav.open { display: block; }
+
+  /* 縦並びメニュー */
+  body.sub-page .site-nav .nav-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 1em;
+  }
+  body.sub-page .site-nav .nav-item {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #eee;
+  }
+}
