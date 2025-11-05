@@ -3,8 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>〇〇大学 居合道部</title>
+  <title>月間予定 - 〇〇大学 居合道部</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ===== カレンダー埋め込み用レスポンシブ調整 ===== */
+    .calendar-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* 縦横比を維持（4:3相当） */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 16px;
+    }
+    .calendar-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ===== 小さい画面で見やすく ===== */
+    @media (max-width: 720px) {
+      .main h2 {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .main p {
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      .calendar-wrapper {
+        padding-bottom: 90%; /* ← スマホは縦長に */
+      }
+    }
+  </style>
 </head>
 
 <body class="sub-page">
@@ -26,17 +61,23 @@
       <a href="schedule.html" class="nav-item">月間予定</a>
     </div>
   </nav>
+
   <main class="container main">
     <h2>月間予定</h2>
     <p>稽古日や大会、行事の予定を下記のカレンダーでご確認ください。</p>
 
-    <!-- Googleカレンダー埋め込み -->
-    <iframe src="https://calendar.google.com/calendar/embed?src=c_02a400baf456832776c55536fd8d3c04753065afc5f7a01ad912830b13e552a1%40group.calendar.google.com&ctz=Asia%2FTokyo" 
-      style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <!-- Googleカレンダー埋め込み（レスポンシブ対応） -->
+    <div class="calendar-wrapper">
+      <iframe src="https://calendar.google.com/calendar/embed?src=c_02a400baf456832776c55536fd8d3c04753065afc5f7a01ad912830b13e552a1%40group.calendar.google.com&ctz=Asia%2FTokyo"
+              frameborder="0" scrolling="no"></iframe>
+    </div>
   </main>
 
   <footer class="site-footer">
     <script src="assets/js/menu.js"></script>
-<div class="container"><small>&copy; 2025 〇〇大学 居合道部</small></div></footer>
+    <div class="container">
+      <small>&copy; 2025 〇〇大学 居合道部</small>
+    </div>
+  </footer>
 </body>
 </html>
