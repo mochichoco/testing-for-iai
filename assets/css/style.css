@@ -94,7 +94,7 @@ body {
 
 /* --- ハンバーガーメニュー --- */
 .menu-toggle {
-  display: none; /* デフォルト非表示 */
+  display: flex; /* デフォルト非表示 */
   flex-direction: column;
   justify-content: center;
   width: 28px;
