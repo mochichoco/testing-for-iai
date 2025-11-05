@@ -4,20 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>大会結果 - 〇〇大学 居合道部</title>
-  <link rel="stylesheet" href="assets/css/style.css">
   <style>
+    body {
+      font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: #fafafa;
+      margin: 0;
+    }
+
     .results-container {
       max-width: 800px;
       margin: 2em auto;
+      padding: 0 1em;
     }
 
     .year-block {
-      margin-bottom: 1.2em;
+      margin-bottom: 1.5em;
       border-radius: 6px;
       overflow: hidden;
       background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: box-shadow 0.2s ease;
     }
 
     .year-block.open {
@@ -26,14 +32,14 @@
 
     .year-header {
       background-color: #f2f2f2;
-      padding: 1em;
+      padding: 1em 1.2em;
       cursor: pointer;
       font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
       user-select: none;
-      transition: background-color 0.2s;
+      transition: background-color 0.15s ease;
     }
 
     .year-header:hover {
@@ -44,25 +50,24 @@
       font-size: 1.3em;
       color: #7b2d26;
       font-weight: bold;
-      transition: transform 0.25s ease;
+      transition: transform 0.15s ease;
     }
 
     .year-content {
+      overflow: hidden;
       max-height: 0;
       opacity: 0;
-      transform: translateY(-10px);
-      overflow: hidden;
-      transition: all 0.35s ease;
+      transform: translateY(-5px);
+      transition: max-height 0.2s ease-out, opacity 0.2s ease-out, transform 0.2s ease-out;
       border-left: 3px solid #7b2d26;
       background: #fff;
-      padding: 0 1em;
     }
 
     .year-content.open {
       opacity: 1;
       transform: translateY(0);
-      max-height: 1000px;
-      padding: 1em 1em 1.5em;
+      max-height: 500px; /* ←軽くするために制限値を小さめに */
+      padding: 1em 1em 1.2em;
     }
 
     .result-item {
@@ -72,28 +77,9 @@
   </style>
 </head>
 
-<body class="sub-page">
-  <header class="site-header">
-    <div class="container header-flex">
-      <h1 class="site-title"><a href="index.html">〇〇大学 居合道部</a></h1>
-      <button class="menu-toggle" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <nav class="site-nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-item">トップ</a>
-      <a href="about.html" class="nav-item">居合道とは</a>
-      <a href="overview.html" class="nav-item">部概要</a>
-      <a href="results.html" class="nav-item active">大会結果</a>
-      <a href="schedule.html" class="nav-item">月間予定</a>
-    </div>
-  </nav>
-
+<body>
   <main class="container main">
-    <h2>大会結果</h2>
+    <h2 style="text-align:center;">大会結果</h2>
 
     <div class="results-container">
 
@@ -134,29 +120,23 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <script src="assets/js/menu.js"></script>
-    <script>
-      document.querySelectorAll('.year-header').forEach(header => {
-        header.addEventListener('click', () => {
-          const block = header.parentElement;
-          const content = header.nextElementSibling;
-          const icon = header.querySelector('.year-icon');
-          const isOpen = content.classList.contains('open');
+  <script>
+    document.querySelectorAll('.year-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const block = header.parentElement;
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('.year-icon');
+        const isOpen = content.classList.contains('open');
 
-          // 開閉トグル
-          content.classList.toggle('open');
-          block.classList.toggle('open');
-          header.classList.toggle('open');
+        // 開閉トグル
+        content.classList.toggle('open');
+        block.classList.toggle('open');
+        header.classList.toggle('open');
 
-          // アイコン変更
-          icon.textContent = isOpen ? '＋' : '−';
-        });
+        // アイコン変更
+        icon.textContent = isOpen ? '＋' : '−';
       });
-    </script>
-    <div class="container">
-      <small>&copy; 2025 〇〇大学 居合道部</small>
-    </div>
-  </footer>
+    });
+  </script>
 </body>
 </html>
