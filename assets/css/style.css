@@ -111,6 +111,31 @@ body {
   transition: all 0.3s;
 }
 
+/* --- ハンバーガーの表示・色修正版（上書き） --- */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-toggle span {
+  display: block;       /* ← 高さが出るように */
+  width: 100%;
+  height: 3px;
+  background: #fff;     /* ← 白線に固定 */
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
 /* ハンバーガー開いたときに×印 */
 .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
