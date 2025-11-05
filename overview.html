@@ -5,6 +5,52 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>部概要 - 〇〇大学 居合道部</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ====== 追加CSS ====== */
+    .section-spacing {
+      margin-top: 60px; /* 部員紹介前の余白 */
+    }
+
+    .pdf-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #b22222; /* 深めの赤 */
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .pdf-button:hover {
+      background-color: #d22f2f; /* 少し明るい赤に変化 */
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* セクション中央寄せ */
+    .section-spacing {
+      text-align: center;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+      iframe {
+        width: 100%;
+        height: 400px;
+      }
+      table td {
+        display: block;
+        width: 100%;
+      }
+      .pdf-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body class="sub-page">
@@ -17,16 +63,15 @@
     </div>
   </header>
 
-<nav class="site-nav">
-  <div class="container nav-inner">
-    <a href="index.html" class="nav-item">トップ</a>
-    <a href="about.html" class="nav-item">居合道とは</a>
-    <a href="overview.html" class="nav-item">部概要</a>
-    <a href="results.html" class="nav-item">大会結果</a>
-    <a href="schedule.html" class="nav-item">月間予定</a>
-  </div>
-</nav>
-
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-item">トップ</a>
+      <a href="about.html" class="nav-item">居合道とは</a>
+      <a href="overview.html" class="nav-item">部概要</a>
+      <a href="results.html" class="nav-item">大会結果</a>
+      <a href="schedule.html" class="nav-item">月間予定</a>
+    </div>
+  </nav>
 
   <main class="container main">
     <h2>部概要</h2>
@@ -47,12 +92,16 @@
       他大学との合同稽古や大会遠征などもあり、技術だけでなく礼儀・集中力・仲間とのつながりを深められる部活です。
     </p>
 
-    <h2>部員紹介</h2>
-    
+    <div class="section-spacing">
+      <h2>部員紹介</h2>
+      <p>部員一覧は以下のボタンからご覧ください。</p>
+      <a href="assets/files/members.pdf" target="_blank" class="pdf-button">部員紹介を見る（PDF）</a>
+    </div>
   </main>
 
-  <footer class="site-footer"><div class="container"><small>&copy; 2025 〇〇大学 居合道部</small></div>
-  <script src="assets/js/menu.js"></script>
-</footer>
+  <footer class="site-footer">
+    <div class="container"><small>&copy; 2025 〇〇大学 居合道部</small></div>
+    <script src="assets/js/menu.js"></script>
+  </footer>
 </body>
 </html>
