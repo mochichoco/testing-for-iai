@@ -162,3 +162,9 @@ body {
     border-bottom: 1px solid #eee;
   }
 }
+
+.menu-toggle {
+  display: flex !important;
+  position: relative;
+  z-index: 1000;
+}
