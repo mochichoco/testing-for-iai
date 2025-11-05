@@ -143,11 +143,7 @@ body {
 
 /* --- スマホ対応 --- */
 @media (max-width: 768px) {
-  /* トップページはハンバーガー非表示 */
-  body.top-page .menu-toggle { display: none; }
-
-  /* サブページは表示 */
-  body.sub-page .menu-toggle { display: flex; }
+  .main-toggle{display: flex !important;}
 
   /* ナビ初期非表示 */
   .site-nav { display: none; background: #f9f9f9; border-top: 1px solid #ccc; }
