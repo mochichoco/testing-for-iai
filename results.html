@@ -5,6 +5,49 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>大会結果 - 〇〇大学 居合道部</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* アコーディオン全体 */
+    .results-container {
+      max-width: 800px;
+      margin: 2em auto;
+    }
+
+    /* 年のボタン部分 */
+    .year-header {
+      background-color: #f2f2f2;
+      padding: 1em;
+      margin-bottom: 0.5em;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+
+    .year-header:hover {
+      background-color: #e6e6e6;
+    }
+
+    /* 開閉する中身 */
+    .year-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      background: #fff;
+      border-left: 3px solid #a00; /* アクセントカラー赤 */
+      padding: 0 1em;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .year-content.open {
+      padding: 1em;
+      max-height: 500px; /* 必要に応じて大きくする */
+      transition: max-height 0.5s ease-in;
+    }
+
+    .result-item {
+      margin-bottom: 0.5em;
+    }
+  </style>
 </head>
 
 <body class="sub-page">
@@ -16,45 +59,63 @@
       </button>
     </div>
   </header>
-  
-  <nav class="site-nav"><div class="container nav-inner">
-    <a href="index.html" class="nav-item">トップ</a>
-    <a href="about.html" class="nav-item">居合道とは</a>
-    <a href="overview.html" class="nav-item">部概要</a>
-    <a href="results.html" class="nav-item">大会結果</a>
-    <a href="schedule.html" class="nav-item">月間予定</a>
-  </div></nav>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-item">トップ</a>
+      <a href="about.html" class="nav-item">居合道とは</a>
+      <a href="overview.html" class="nav-item">部概要</a>
+      <a href="results.html" class="nav-item active">大会結果</a>
+      <a href="schedule.html" class="nav-item">月間予定</a>
+    </div>
+  </nav>
 
   <main class="container main">
     <h2>大会結果</h2>
 
-    <section class="results-year">
-      <h3>2025年度</h3>
-      <ul>
-        <li>第XX回 全日本学生居合道大会　男子個人三段の部　ベスト8（〇〇）</li>
-        <li>第X回 関東学生居合道大会　女子団体の部　第3位</li>
-      </ul>
-    </section>
+    <div class="results-container">
+      <!-- 2025年 -->
+      <div class="year-block">
+        <div class="year-header">2025年</div>
+        <div class="year-content">
+          <p class="result-item">〇〇大会：個人戦 優勝（山田）</p>
+          <p class="result-item">△△杯：団体戦 準優勝</p>
+        </div>
+      </div>
 
-    <section class="results-year">
-      <h3>2024年度</h3>
-      <ul>
-        <li>第XX回 全日本学生居合道大会　男子個人二段の部　優勝（〇〇）</li>
-        <li>第X回 関東学生居合道新人戦　女子個人初段の部　ベスト4</li>
-      </ul>
-    </section>
+      <!-- 2024年 -->
+      <div class="year-block">
+        <div class="year-header">2024年</div>
+        <div class="year-content">
+          <p class="result-item">全国学生大会：ベスト8</p>
+          <p class="result-item">地方大会：団体3位</p>
+        </div>
+      </div>
 
-    <p style="margin-top:16px;">
-      日々の稽古の成果を確認する場として、多くの大会に出場しています。
-      試合を通じて技だけでなく礼節・気持ちの強さを学び、次の稽古への励みにしています。
-    </p>
+      <!-- 2023年 -->
+      <div class="year-block">
+        <div class="year-header">2023年</div>
+        <div class="year-content">
+          <p class="result-item">新人戦：敢闘賞（田中）</p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
     <script src="assets/js/menu.js"></script>
-    <script src="assets/js/backtotop.js"></script>
-
-    <div class="container"><small>&copy; 2025 〇〇大学 居合道部</small></div></footer>
-    <button id="back-to-top" aria-label="ページ上部へ">▲</button>
+    <script>
+      // アコーディオン開閉スクリプト
+      document.querySelectorAll('.year-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          content.classList.toggle('open');
+        });
+      });
+    </script>
+    <div class="container">
+      <small>&copy; 2025 〇〇大学 居合道部</small>
+    </div>
+  </footer>
 </body>
 </html>
