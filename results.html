@@ -11,18 +11,29 @@
       margin: 2em auto;
     }
 
+    .year-block {
+      margin-bottom: 1.2em;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .year-block.open {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
     .year-header {
       background-color: #f2f2f2;
       padding: 1em;
-      margin-bottom: 0.5em;
       cursor: pointer;
       font-weight: bold;
-      border-radius: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background-color 0.2s;
       user-select: none;
+      transition: background-color 0.2s;
     }
 
     .year-header:hover {
@@ -30,33 +41,33 @@
     }
 
     .year-icon {
-      transition: transform 0.3s ease;
-    }
-
-    .year-header.open .year-icon {
-      transform: rotate(180deg);
+      font-size: 1.3em;
+      color: #7b2d26;
+      font-weight: bold;
+      transition: transform 0.25s ease;
     }
 
     .year-content {
-      overflow: hidden;
-      background: #fff;
-      border-left: 3px solid #a00;
-      border-radius: 0 0 6px 6px;
-      padding: 0 1em;
-      height: 0;
+      max-height: 0;
       opacity: 0;
-      transition: height 0.4s ease, opacity 0.3s ease;
+      transform: translateY(-10px);
+      overflow: hidden;
+      transition: all 0.35s ease;
+      border-left: 3px solid #7b2d26;
+      background: #fff;
+      padding: 0 1em;
     }
 
     .year-content.open {
-      padding: 1em;
-      height: auto;
       opacity: 1;
-      transition: height 0.4s ease, opacity 0.3s ease;
+      transform: translateY(0);
+      max-height: 1000px;
+      padding: 1em 1em 1.5em;
     }
 
     .result-item {
       margin-bottom: 0.5em;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -85,11 +96,12 @@
     <h2>大会結果</h2>
 
     <div class="results-container">
-      <!-- 2025年（デフォルトで開） -->
-      <div class="year-block">
+
+      <!-- 2025年（デフォ開） -->
+      <div class="year-block open">
         <div class="year-header open">
           2025年
-          <span class="year-icon">▼</span>
+          <span class="year-icon">−</span>
         </div>
         <div class="year-content open">
           <p class="result-item">〇〇大会：個人戦 優勝（山田）</p>
@@ -101,7 +113,7 @@
       <div class="year-block">
         <div class="year-header">
           2024年
-          <span class="year-icon">▼</span>
+          <span class="year-icon">＋</span>
         </div>
         <div class="year-content">
           <p class="result-item">全国学生大会：ベスト8</p>
@@ -113,7 +125,7 @@
       <div class="year-block">
         <div class="year-header">
           2023年
-          <span class="year-icon">▼</span>
+          <span class="year-icon">＋</span>
         </div>
         <div class="year-content">
           <p class="result-item">新人戦：敢闘賞（田中）</p>
@@ -127,37 +139,18 @@
     <script>
       document.querySelectorAll('.year-header').forEach(header => {
         header.addEventListener('click', () => {
+          const block = header.parentElement;
           const content = header.nextElementSibling;
           const icon = header.querySelector('.year-icon');
-
           const isOpen = content.classList.contains('open');
-          // 開いてるなら閉じる
-          if (isOpen) {
-            content.style.height = content.scrollHeight + 'px'; // 一旦高さ確定
-            requestAnimationFrame(() => {
-              content.style.height = '0';
-              content.style.opacity = '0';
-            });
-            content.addEventListener('transitionend', () => {
-              content.classList.remove('open');
-              header.classList.remove('open');
-              content.style.height = '';
-            }, { once: true });
-          } else {
-            // 閉じてるなら開く
-            content.classList.add('open');
-            header.classList.add('open');
-            content.style.height = 'auto';
-            const height = content.scrollHeight + 'px';
-            content.style.height = '0';
-            requestAnimationFrame(() => {
-              content.style.height = height;
-              content.style.opacity = '1';
-            });
-            content.addEventListener('transitionend', () => {
-              content.style.height = 'auto'; // 固定解除
-            }, { once: true });
-          }
+
+          // 開閉トグル
+          content.classList.toggle('open');
+          block.classList.toggle('open');
+          header.classList.toggle('open');
+
+          // アイコン変更
+          icon.textContent = isOpen ? '＋' : '−';
         });
       });
     </script>
