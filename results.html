@@ -4,13 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>大会結果 - 〇〇大学 居合道部</title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    body {
-      font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
-      background: #fafafa;
-      margin: 0;
-    }
-
+    /* このページ特有の見た目だけをここで指定 */
     .results-container {
       max-width: 800px;
       margin: 2em auto;
@@ -58,7 +54,7 @@
       max-height: 0;
       opacity: 0;
       transform: translateY(-5px);
-      transition: max-height 0.2s ease-out, opacity 0.2s ease-out, transform 0.2s ease-out;
+      transition: max-height 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
       border-left: 3px solid #7b2d26;
       background: #fff;
     }
@@ -66,8 +62,9 @@
     .year-content.open {
       opacity: 1;
       transform: translateY(0);
-      max-height: 500px; /* ←軽くするために制限値を小さめに */
+      max-height: 500px;
       padding: 1em 1em 1.2em;
+      margin-bottom: 1.2em; /* ← 開いたとき下に余白 */
     }
 
     .result-item {
@@ -77,7 +74,27 @@
   </style>
 </head>
 
-<body>
+<body class="sub-page">
+  <!-- ✅ 共通ヘッダー -->
+  <header class="site-header">
+    <div class="container header-flex">
+      <h1 class="site-title"><a href="index.html">〇〇大学 居合道部</a></h1>
+      <button class="menu-toggle" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-item">トップ</a>
+      <a href="about.html" class="nav-item">居合道とは</a>
+      <a href="overview.html" class="nav-item">部概要</a>
+      <a href="results.html" class="nav-item">大会結果</a>
+      <a href="schedule.html" class="nav-item">月間予定</a>
+    </div>
+  </nav>
+
   <main class="container main">
     <h2 style="text-align:center;">大会結果</h2>
 
@@ -120,6 +137,16 @@
     </div>
   </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2025 〇〇大学 居合道部</small>
+    </div>
+  </footer>
+
+  <!-- ✅ 共通JS -->
+  <script src="assets/js/menu.js"></script>
+
+  <!-- 大会結果開閉スクリプト -->
   <script>
     document.querySelectorAll('.year-header').forEach(header => {
       header.addEventListener('click', () => {
@@ -128,12 +155,9 @@
         const icon = header.querySelector('.year-icon');
         const isOpen = content.classList.contains('open');
 
-        // 開閉トグル
         content.classList.toggle('open');
         block.classList.toggle('open');
         header.classList.toggle('open');
-
-        // アイコン変更
         icon.textContent = isOpen ? '＋' : '−';
       });
     });
